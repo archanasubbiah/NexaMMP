@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="Suite" verbose="5">
+
+  <test thread-count="5" name="validLogin">
+  <parameter name="UN1" value = "ria1"/>
+  <parameter name="PWD1" value = "Ria12345"/>
+  <parameter name="url" value="http://96.84.175.78/MMP-Release2-Integrated-Build.6.8.000/portal/login.php"/>
+      <classes>
+  		<class name="org.iit.mmp.patientmodule.LoginMMP"/>
+  	 </classes>
+  
+  </test> <!-- Test -->
+  
+  
+  
+  <test thread-count="5" name="invalidLogin">
+    <parameter name="UN2" value = "e"/>
+    <parameter name="PWD2" value = "12^"/>
+    <parameter name="url" value="http://96.84.175.78/MMP-Release2-Integrated-Build.6.8.000/portal/login.php"/>
+         <classes>
+  		     <class name="org.iit.mmp.patientmodule.InvalidLoginMMP"/>
+  	     </classes>
+  </test>
+   
+   
+ <test thread-count="5" name="AdminLogin">
+    <parameter name="U1" value = "Thomas_444"/>
+    <parameter name="P1" value = "Edison_444"/>
+    <parameter name="url" value="http://96.84.175.78/MMP-Release2-Admin-Build.2.1.000/login.php"/>
+      <classes>
+  		<class name="org.iit.mmp.adminmodule.AdminLoginMMP"/>
+  	  </classes>
+   </test>
+  
+  
+  <test thread-count="5" name="AdminInvalid">
+    <parameter name="U2" value = "Thomas"/>
+    <parameter name="P2" value = "Edison"/>
+    <parameter name="url" value="http://96.84.175.78/MMP-Release2-Admin-Build.2.1.000/login.php"/>
+      <classes>
+  		<class name="org.iit.mmp.adminmodule.AdminInvalidMMP"/>
+  	  </classes>
+   </test>
+</suite> <!-- Suite -->
